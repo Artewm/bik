@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener("click", () => {
         burger.classList.toggle("active");
         nav.classList.toggle("active");
+        console.log("Кнопка нажата");
 
         document.body.style.overflow =
             nav.classList.contains("active") ? "hidden" : "";
