@@ -235,35 +235,50 @@ h1, h2, h3, h4 {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1001;
     width: 30px;
     height: 30px;
+    z-index: 1001;
 }
 
 .burger span {
-    display: block;
-    width: 26px;
+    width: 100%;
     height: 2px;
-    background: var(--color-text);
-    transition: var(--transition);
+    background: #222;
     border-radius: 2px;
+    transition: 0.3s;
 }
 
-/* Мобильная навигация */
+/* ===== DESKTOP NAV ===== */
+.nav__list {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+/* ===== MOBILE ===== */
 @media (max-width: 992px) {
+
+    .burger {
+        display: flex;
+    }
+
+    .header__btn {
+        display: none;
+    }
+
     .nav {
         position: fixed;
         top: 0;
         right: -100%;
         width: 80%;
-        max-width: 400px;
+        max-width: 380px;
         height: 100vh;
-        background: var(--color-white);
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: right 0.4s ease;
+        transition: 0.4s ease;
         z-index: 999;
     }
 
@@ -273,23 +288,13 @@ h1, h2, h3, h4 {
 
     .nav__list {
         flex-direction: column;
-        align-items: center;
-        gap: 32px;
+        gap: 25px;
+        text-align: center;
+        padding: 0;
+        margin: 0;
     }
 
-    .nav__link {
-        font-size: 1.2rem;
-    }
-
-    .header__btn {
-        display: none;
-    }
-
-    .burger {
-        display: flex;
-    }
-
-    /* Анимация бургера */
+    /* анимация бургера */
     .burger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
@@ -843,6 +848,7 @@ h1, h2, h3, h4 {
 
 /* Большие телефоны */
 @media (max-width: 768px) {
+    
     .hero__title {
         font-size: 2.4rem;
     }
@@ -886,6 +892,9 @@ h1, h2, h3, h4 {
 
     .social-links {
         justify-content: center;
+    }
+    .hero__visual{
+        display: none;
     }
 }
 

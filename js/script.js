@@ -1,26 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- Мобильное меню (бургер) ---
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav');
-    const navLinks = document.querySelectorAll('.nav__link');
+   const burger = document.querySelector(".burger");
+    const nav = document.querySelector(".nav");
+    const links = document.querySelectorAll(".nav__link");
 
-    if (burger && nav) {
-        burger.addEventListener('click', () => {
-            burger.classList.toggle('active');
-            nav.classList.toggle('active');
-            document.body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-        });
+    if (!burger || !nav) return;
 
-        // Закрытие меню при клике на ссылку
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                burger.classList.remove('active');
-                nav.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+    burger.addEventListener("click", () => {
+        burger.classList.toggle("active");
+        nav.classList.toggle("active");
+
+        document.body.style.overflow =
+            nav.classList.contains("active") ? "hidden" : "";
+    });
+
+    links.forEach(link => {
+        link.addEventListener("click", () => {
+            burger.classList.remove("active");
+            nav.classList.remove("active");
+            document.body.style.overflow = "";
         });
-    }
+    });
 
     // --- Плавная прокрутка для всех якорных ссылок ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
