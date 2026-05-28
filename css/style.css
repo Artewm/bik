@@ -159,10 +159,10 @@ h1, h2, h3, h4 {
     z-index: 1001;
 }
 .logo__image {
-    height: 100px;
+    height: 80px;
     width: auto;
     display: block;
-    /* margin: -20px 0px; */
+    margin: -5px 0px;
 }
 .logo__icon {
     font-size: 1.8rem;
