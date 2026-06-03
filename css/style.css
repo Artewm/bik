@@ -44,8 +44,14 @@ body {
     overflow-x: hidden;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 .container {
-    max-width: 1200px;
+    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -274,37 +280,42 @@ h1, h2, h3, h4 {
     .nav {
         position: fixed;
         top: 0;
-        right: -100%;
+        right: -380px; /* меню скрыто за экраном */
         width: 80%;
         max-width: 380px;
         height: 100vh;
+
         background: #fff;
-        box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+
         display: flex;
         align-items: center;
         justify-content: center;
-        transition: 0.4s ease;
+
+        transition: right 0.4s ease;
         z-index: 999;
     }
 
     .nav.active {
         right: 0;
-        z-index: 999;
     }
 
     .nav__list {
+        display: flex;
         flex-direction: column;
         gap: 25px;
         text-align: center;
         padding: 0;
         margin: 0;
+        list-style: none;
     }
-    .nav__link{
+
+    .nav__link {
         font-weight: bold;
         font-size: 24px;
     }
 
-    /* анимация бургера */
+    /* Анимация бургера */
     .burger.active span:nth-child(1) {
         transform: translateY(7px) rotate(45deg);
     }
